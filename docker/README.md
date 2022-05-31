@@ -36,7 +36,7 @@ $ docker buildx inspect --bootstrap
 
 ```sh
 $ cd bitcoind
-$ docker buildx build  --platform linux/amd64,linux/arm64 --build-arg BITCOIN_VERSION=22.0  -t polarlightning/bitcoind:22.0  --push  .
+$ docker buildx build  --platform linux/amd64,linux/arm64 --build-arg BITCOIN_VERSION=<version>  -t polarlightning/bitcoind:<version>  --push  .
 ```
 
 Replace `<version>` with the desired bitcoind version (ex: `0.18.1`)
@@ -75,7 +75,7 @@ Replace `<version>` with the desired bitcoind version (ex: `0.18.1`)
 
 ```sh
 $ cd lnd
-$ docker buildx build  --platform linux/amd64,linux/arm64 --build-arg LND_VERSION=0.14.1-beta -t polarlightning/lnd:0.14.1-beta  --push  .
+$ docker buildx build  --platform linux/amd64,linux/arm64 --build-arg LND_VERSION=<version> -t polarlightning/lnd:<version>  --push  .
 ```
 
 Replace `<version>` with the desired LND version (ex: `0.7.1-beta`)
