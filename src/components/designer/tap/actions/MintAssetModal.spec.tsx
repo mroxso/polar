@@ -99,7 +99,11 @@ describe('MintAssetModal', () => {
         Promise.resolve(balances((node.id + 100).toString())),
       );
       tapServiceMock.mintAsset.mockResolvedValue({
-        batchKey: Buffer.from('mocked success!'),
+        pendingBatch: {
+          batchKey: Buffer.from('mocked success!'),
+          assets: [],
+          state: 'BATCH_STATE_FINALIZED',
+        },
       });
 
       lightningServiceMock.getBalances.mockResolvedValue({
